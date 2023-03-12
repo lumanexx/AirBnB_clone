@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines unittests for console.py.
+
 Unittest classes:
     TestHBNBCommand_prompting
     TestHBNBCommand_help
@@ -1384,7 +1385,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         testCmd += "{'attr_name': 'attr_value'}"
         HBNBCommand().onecmd(testCmd)
         test_dict = storage.all()["Amenity.{}".format(testId)].__dict__
-[O        self.assertEqual("attr_value", test_dict["attr_name"])
+        self.assertEqual("attr_value", test_dict["attr_name"])
 
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create Review")
